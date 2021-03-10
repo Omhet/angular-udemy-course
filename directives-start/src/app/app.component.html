@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <button
+        class="btn btn-primary"
+        (click)="onlyOdd = !onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <li *ngFor="let number of numbers"
+          class="list-group-item">
+          <span>{{ number }}</span>
+        </li>
+      </ul>
+      <p appHighlight>Style me</p>
+      <p [appBetterHighlight]="'pink'" defaultColor="tomato">Style me</p>
+      <p *appUnless="onlyOdd">Unless</p>
+      <div [ngSwitch]="value">
+        <span *ngSwitchCase="10">10</span>
+        <span *ngSwitchDefault>Default</span>
+      </div>
+    </div>
+  </div>
+</div>
